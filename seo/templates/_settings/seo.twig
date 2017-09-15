@@ -7,3 +7,15 @@
 	id: "metaTemplate",
 	value: settings.metaTemplate
 }) }}
+
+<hr>
+
+<h2>Social</h2>
+
+{{ forms.textField({
+	label: "Twitter",
+	instructions: "Your Twitter handle, without the @",
+	name: "social[twitter]",
+	id: "twitter",
+	value: settings.social and settings.social.twitter ? settings.social.twitter
+}) }}

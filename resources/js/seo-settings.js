@@ -12,7 +12,7 @@ const SeoSettings = function (namespace, run, csrf) {
 			new SeoSettings.EditableTable(this.namespace + '-customUrls', this.namespace + '-addCustomUrl');
 			break;
 		case 'redirects':
-			this.redirectsForm();
+			new Redirects(this.namespace, this.csrf);
 			break;
 		case 'settings':
 			this.sitemapName();
@@ -27,12 +27,6 @@ SeoSettings.prototype.sitemapName = function () {
 	document.getElementById(this.namespace + '-sitemapName').addEventListener('input', function () {
 		example.textContent = this.value + '.xml';
 	});
-};
-
-// Redirects
-// =============================================================================
-SeoSettings.prototype.redirectsForm = function () {
-	new Redirects(this.namespace, this.csrf);
 };
 
 // Helpers

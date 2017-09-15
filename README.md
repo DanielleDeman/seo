@@ -22,6 +22,8 @@ SEO for Craft boasts an extremely powerful, yet simple to use Sitemap manager. W
 
 With SEO for Craft’s sitemap manager you have complete control over what content you want to have appear on your sitemap as well as managing its change frequency and priority in your site.
 
+![Sitemap for Craft CMS](resources/imgs/sitemap.png)
+
 ### The Redirects
 
 When moving from your old, awful site to your shiny new Craft one, you’ll want to make sure that all your old pages are redirected to their new counterparts. Redirects are easy to manage with SEO for Craft.
@@ -32,6 +34,8 @@ SEO for Crafts redirect manager lets you easily add 301 & 302 redirects, with fu
 To redirect from `blog/2016/my-post` to `news/my-post` you would add the following redirect:
 
 URI: `blog/([0-9]{4})/(.*)` To: `news/$2`
+
+![Redirects for Craft CMS](resources/imgs/redirects.png)
 
 ## Installation & Usage
 
@@ -57,6 +61,15 @@ The last parameter is a boolean that tell the plugin whether or not to include t
 
 All parameters are optional.
 
+### Social
+
+You can store some social media information in the SEO plugin (in the plugin Settings), which the plugin will use when generating meta. You can access stored social info using `{{ craft.seo.social() }}` which will return an array of all the stored social details, including a profile URL.
+
+```twig
+{{ craft.seo.social().twitter }} {# Outputs: "my_twitter_handle" #}
+{{ craft.seo.social().twitterUrl }} {# Outputs: "https://twitter.com/my_twitter_handle" #}
+```
+
 ## Upcoming Features
 
 Checkout our [Trello Board](https://trello.com/b/XvBY9m5l/seo-plugin) to see what new features we're working on.
@@ -64,6 +77,9 @@ Checkout our [Trello Board](https://trello.com/b/XvBY9m5l/seo-plugin) to see wha
 If you have a feature suggestion, [leave an issue](https://github.com/ethercreative/seo/issues) with the prefix `[FR]`.  
 
 ## Changelog
+
+### 1.4.8 WIP
+- [Added] Added twitter handle setting
 
 ### 1.4.7
 - [Improved] The redirects table is now properly responsive!

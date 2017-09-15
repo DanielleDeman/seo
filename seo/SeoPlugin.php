@@ -32,7 +32,7 @@ class SeoPlugin extends BasePlugin {
 
 	public function getVersion()
 	{
-		return '1.4.7';
+		return '1.4.8';
 	}
 
 	public function getSchemaVersion()
@@ -104,6 +104,9 @@ class SeoPlugin extends BasePlugin {
 			// Fieldtype Settings
 			"titleSuffix"  => [AttributeType::String],
 			"metaTemplate" => [AttributeType::String],
+
+			// Social
+			"social" => [AttributeType::Mixed],
 		);
 	}
 
